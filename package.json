@@ -1,0 +1,27 @@
+{
+  "name": "dedsilva-wms",
+  "version": "1.0.0",
+  "description": "DedSilva / Kaynes Warehouse System - barcode tracking",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node scripts/notify-test.js",
+    "notify-test": "node scripts/notify-test.js"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "exceljs": "^4.4.0",
+    "express": "^5.3.0",
+    "jsbarcode": "^3.12.3",
+    "jspdf": "^4.2.1",
+    "nodemailer": "^10.3.1"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "private": true,
+  "overrides": {
+    "uuid": "^11.1.1"
+  }
+}

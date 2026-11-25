@@ -1,0 +1,31 @@
+[Unit]
+Description=DedSilva / Kaynes Warehouse System
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=wms
+Group=wms
+WorkingDirectory=/opt/dedsilva-wms
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/node server.js
+Restart=always
+RestartSec=3
+TimeoutStopSec=15
+# settings come from /opt/dedsilva-wms/.env (read by the app itself)
+
+# keep the app boxed in: it can only write to its data folder
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+ReadWritePaths=/var/lib/dedsilva-wms
+
+[Install]
+WantedBy=multi-user.target
